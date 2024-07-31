@@ -98,36 +98,42 @@ namespace Poo_Ejercicio_Empleados.Models
                             var nombreNuevo = Console.ReadLine();
                             empleado.Nombre = nombreNuevo;
                             Console.WriteLine("El nombre fue editado satisfactoriamente");
+                            PausarMenu();
                             break;
                         case "2":
                             Console.WriteLine("Escribe el nuevo apellido: ");
                             var apellidoNuevo = Console.ReadLine();
                             empleado.Apellido = apellidoNuevo;
                             Console.WriteLine("El apellido fue editado satisfactoriamente");
+                            PausarMenu();
                             break;
                         case "3":
                             Console.WriteLine("Escribe el nuevo número de documento: ");
                             var numeroNuevo = Console.ReadLine();
                             empleado.NumeroIdenfiticacion = numeroNuevo;
                             Console.WriteLine("El número de documento fue editado satisfactoriamente");
+                            PausarMenu();
                             break;
                         case "4":
                             Console.WriteLine("Escribe la nueva edad: ");
                             var edadNueva = Convert.ToByte(Console.ReadLine());
                             empleado.Edad = edadNueva;
                             Console.WriteLine("La edad fue editada satisfactoriamente");
+                            PausarMenu();
                             break;
                         case "5":
                             Console.WriteLine("Escribe la nueva edad: ");
                             var cargoNuevo = Console.ReadLine();
                             empleado.Cargo = cargoNuevo;
                             Console.WriteLine("El cargo fue editada satisfactoriamente");
+                            PausarMenu();
                             break;
                         case "6":
                             Console.WriteLine("Escribe la nueva edad: ");
                             var salarioNuevo = Convert.ToDouble(Console.ReadLine());
                             empleado.Salario = salarioNuevo;
                             Console.WriteLine("La edad fue editada satisfactoriamente");
+                            PausarMenu();
                             break;
                         default:
                             Console.WriteLine("Opción invalida, intenta nuevamente");
@@ -155,10 +161,17 @@ namespace Poo_Ejercicio_Empleados.Models
             }
         }
 
-        public void BuscarPorCargo( string cargo){
+        public void BuscarPorCargo(string cargo)
+        {
             var empleadosCargo = ListaEmpleados.Where(empleado => empleado.Cargo == cargo).ToList();
             Console.WriteLine($"Los empleados con cargo {cargo}: ");
             MostrarEmpleados(empleadosCargo);
+        }
+
+        public void PausarMenu()
+        {
+            Console.WriteLine("Presiona cualquier tecla para continuar");
+            Console.ReadKey();
         }
     }
 }
