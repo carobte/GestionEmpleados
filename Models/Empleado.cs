@@ -5,32 +5,22 @@ using System.Threading.Tasks;
 
 namespace Poo_Ejercicio_Empleados.Models
 {
-    public class Empleado(string nombre, string apellido, string numeroIdentificacion, byte edad, string cargo, double salario)
+    public class Empleado(string nombre, string apellido, string numeroIdentificacion, int edad, string cargo, decimal salario) : Persona(nombre, apellido, numeroIdentificacion, edad)
     {
-        public Guid Id {get;set;} = Guid.NewGuid();
-        public string? Nombre {get;set;} = nombre;
-        public string? Apellido {get;set;} = apellido;
-        public string? NumeroIdenfiticacion {get;set;} = numeroIdentificacion;
-        public byte Edad {get;set;} = edad;
-        public string? Cargo {get;set;} = cargo;
-        public double Salario {get;set;} = salario;
+        public string? Cargo { get; set; } = cargo;
+        public decimal Salario { get; set; } = salario;
 
-        private double CalcularBonificacion(){
-            var bonificacion = Salario * 0.01;
+        private decimal CalcularBonificacion(){
+            var bonificacion = Salario * Convert.ToDecimal(0.10);
             return bonificacion + Salario;
         }
 
-        public void MostrarInfo(){
-            Console.WriteLine(@$"
-            ________________________________________________
-            Empleado: {Nombre} {Apellido},
-            Identificación: {NumeroIdenfiticacion},
-            Edad: {Edad},
-            Cargo: {Cargo},
-            Salario base: {Salario}, 
-            Salario con tu bonificación del 10%: {CalcularBonificacion()}
-            ________________________________________________
-            ");
+        public override void MostrarInfo(){
+            base.MostrarInfo();
+            Console.WriteLine($"Cargo: {Cargo}");
+            Console.WriteLine($"Salario base: {Salario},");
+            Console.WriteLine($"Salario con tu bonificación del 10%: {CalcularBonificacion()}");
+            Console.WriteLine("________________________________________________");
         }
     }
 }
