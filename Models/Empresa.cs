@@ -29,13 +29,13 @@ namespace Poo_Ejercicio_Empleados.Models
             var numeroIdentificacion = Console.ReadLine();
 
             Console.WriteLine($"Escribe la edad del empleado: ");
-            var edad = Convert.ToByte(Console.ReadLine());
+            var edad = Convert.ToInt32(Console.ReadLine());
 
             Console.WriteLine($"Escribe el cargo del empleado: ");
             var cargo = Console.ReadLine();
 
             Console.WriteLine($"Escribe el salario del empleado: ");
-            var salario = Convert.ToDouble(Console.ReadLine());
+            var salario = Convert.ToDecimal(Console.ReadLine());
             return new Empleado(nombre, apellido, numeroIdentificacion, edad, cargo, salario);
         }
 
@@ -129,8 +129,8 @@ namespace Poo_Ejercicio_Empleados.Models
                             PausarMenu();
                             break;
                         case "6":
-                            Console.WriteLine("Escribe la nueva edad: ");
-                            var salarioNuevo = Convert.ToDouble(Console.ReadLine());
+                            Console.WriteLine("Escribe el nuevo salario: ");
+                            var salarioNuevo = Convert.ToDecimal(Console.ReadLine());
                             empleado.Salario = salarioNuevo;
                             Console.WriteLine("La edad fue editada satisfactoriamente");
                             PausarMenu();
