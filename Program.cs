@@ -1,7 +1,13 @@
 ﻿
 using Poo_Ejercicio_Empleados.Models;
 
+
+// Datos quemados
 var empresa = new Empresa("Carites", "De moda outlet");
+empresa.AgregarEmpleado(new Empleado("caro", "bte", "123", 27, "supervisor", 5000000)); 
+empresa.AgregarEmpleado(new Empleado("cami", "c", "456", 26, "supervisor", 5000000)); 
+empresa.AgregarEmpleado(new Empleado("cami", "b", "789", 25, "vendedor", 3000000)); 
+empresa.AgregarEmpleado(new Empleado("val", "p", "012", 27, "asesor", 2000000)); 
 
 void Menu()
 {
@@ -38,7 +44,6 @@ void Menu()
             case "3":
             Console.WriteLine("Ingresa el número de documento del empleado a actualizar: ");
             empresa.ActualizarEmpleado(Console.ReadLine());
-            empresa.PausarMenu();
             break;
           
             case "4":
@@ -64,7 +69,6 @@ void Menu()
             Console.WriteLine("Opción invalida, intente nuevamente");
             break;
         }
-
     }
 }
 

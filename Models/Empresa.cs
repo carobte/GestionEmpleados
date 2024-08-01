@@ -164,8 +164,13 @@ namespace Poo_Ejercicio_Empleados.Models
         public void BuscarPorCargo(string cargo)
         {
             var empleadosCargo = ListaEmpleados.Where(empleado => empleado.Cargo == cargo).ToList();
-            Console.WriteLine($"Los empleados con cargo {cargo}: ");
-            MostrarEmpleados(empleadosCargo);
+            if (empleadosCargo.Count != 0)
+            {
+                Console.WriteLine($"Los empleados con cargo {cargo}: ");
+                MostrarEmpleados(empleadosCargo);
+            } else {
+                Console.WriteLine($"No se encontraron empleados con el cargo {cargo}");
+            }
         }
 
         public void PausarMenu()
