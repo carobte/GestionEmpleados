@@ -8,12 +8,15 @@ empresa.AgregarEmpleado(new Empleado("caro", "bte", "123", 27, "supervisor", 500
 empresa.AgregarEmpleado(new Empleado("cami", "c", "456", 26, "supervisor", 5000000)); 
 empresa.AgregarEmpleado(new Empleado("cami", "b", "789", 25, "vendedor", 3000000)); 
 empresa.AgregarEmpleado(new Empleado("val", "p", "012", 27, "asesor", 2000000)); 
+Console.Clear();
 
 void Menu()
 {
     var bandera = true;
     while (bandera)
     {
+        Console.WriteLine("Bienvenido a la gestión de empleados ");
+        Console.WriteLine("");
         Console.WriteLine("Selecciona una opción:");
         Console.WriteLine("1. Crear un nuevo Empleado");
         Console.WriteLine("2. Mostrar todos los Empleados");
